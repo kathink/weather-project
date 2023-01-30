@@ -65,7 +65,7 @@ button {
   color: rgba(1, 37, 71, 0.7);
   font-family: "Pacifico";
   position: relative;
-  left: -10px;
+  left: -20px;
   top: 5px;
 }
 
@@ -104,9 +104,9 @@ button {
   left: 5px;
 }
 .today-weather-icon {
-  width: 150px;
-  right: 10px;
-  align-content: center;
+  width: 160px;
+  position: relative;
+  top: -10px;
 }
 .details {
   text-align: left;

@@ -5,45 +5,6 @@ function showSearchBar() {
 document.getElementById("search-btn").addEventListener("click", showSearchBar);
 
 function displayCurrentLocation() {
-  function showTemp(response) {
-    let currentLocation = response.data.name;
-    let currentDegree = Math.round(response.data.main.temp);
-    currentCelcius = response.data.main.temp;
-    document.querySelector("#current-degree").innerHTML = currentDegree;
-    document.querySelector("#city").innerHTML = currentLocation;
-  }
-  function describeWeather(response) {
-    let currentHour = currentDate.getHours();
-    let hourlyHumidity = response.data.hourly[currentHour].humidity;
-    let hourlyPrecipitation = Math.round(
-      response.data.hourly[currentHour].pop * 100
-    );
-    let hourlyWinSpeed = Math.round(
-      response.data.hourly[currentHour].wind_speed * 3.6
-    );
-    document.querySelector(
-      "#humidity-percentage"
-    ).innerHTML = `${hourlyHumidity}%`;
-    document.querySelector(
-      "#precipitation-percentage"
-    ).innerHTML = `${hourlyPrecipitation}%`;
-    document.querySelector(
-      "#win-speed-kilometer-per-hour"
-    ).innerHTML = `${hourlyWinSpeed}km/h`;
-    let hourlyUvi = response.data.hourly[currentHour].uvi;
-    let uvIndex = document.querySelector("#uv-index");
-    if (hourlyUvi < 2) {
-      uvIndex.innerHTML = "Low";
-    } else if (3 < hourlyUvi < 5) {
-      uvIndex.innerHTML = "Moderate";
-    } else if (6 < hourlyUvi < 7) {
-      uvIndex.innerHTML = "High";
-    } else if (8 < hourlyUvi < 10) {
-      uvIndex.innerHTML = "Very High";
-    } else {
-      uvIndex.innerHTML = "Extreme";
-    }
-  }
   function retrievePosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
@@ -102,7 +63,7 @@ function showTemp(response) {
     response.data.weather[0].description;
   currentIcon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`
+    `images/${response.data.weather[0].icon}.png`
   );
   currentIcon.setAttribute("alt", response.data.weather[0].description);
   let cityLatitude = response.data.coord.lat;
