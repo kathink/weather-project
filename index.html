@@ -25,6 +25,13 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
+    <video
+      class="background"
+      autoplay
+      muted
+      loop
+      src="video/background.mp4"
+    ></video>
     <div class="container">
       <i
         title="Current Location"
@@ -50,13 +57,7 @@
           </div>
         </form>
       </div>
-      <video
-        class="background"
-        autoplay
-        muted
-        loop
-        src="video/background.mp4"
-      ></video>
+
       <section class="up-part">
         <div class="today-weather-location">
           <div class="today-weather-icon">
@@ -146,6 +147,12 @@
             <div class="degree">32° 24°</div>
           </div>
         </div>
+      </div>
+      <div class="dev">
+        <a href="https://github.com/kathink/weather-project" target="_blank">
+          Open-source code</a
+        >
+        by Katherine Pham
       </div>
     </div>
     <script src="src/script.js"></script>
