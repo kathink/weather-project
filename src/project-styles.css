@@ -1,6 +1,6 @@
 h1,
 h2,
-h3 {
+.date-description {
   margin: 0;
   line-height: 1;
 }
@@ -13,11 +13,7 @@ h2 {
   font-size: 30px;
   color: rgba(0, 26, 50, 0.7);
 }
-h3 {
-  font-size: 20px;
-  color: rgba(1, 37, 71, 0.7);
-  font-family: "Pacifico";
-}
+
 h4 {
   text-align: center;
   font-size: 18px;
@@ -75,6 +71,12 @@ label {
   );
   border-radius: 30px 10px;
 }
+.date-description {
+  font-size: 20px;
+  color: rgba(1, 37, 71, 0.7);
+  font-family: "Pacifico";
+  padding-bottom: 10px;
+}
 
 .current-location-icon {
   position: relative;
@@ -117,9 +119,13 @@ label {
 }
 .details {
   text-align: left;
+  position: relative;
+  left: 15px;
 }
 .degree-symbol {
-  font-size: 40px;
+  font-size: 25px;
+  position: relative;
+  top: -30px;
 }
 
 .general-info {
@@ -128,15 +134,13 @@ label {
   top: 17px;
   right: 40px;
 }
-.info-grid {
-  padding: 0 0 5px;
-}
 .info {
   font-size: 12px;
   line-height: 1.5;
   text-align: center;
-  padding: 0;
+  padding: 5px;
   transition: all 300ms ease-in-out;
+  color: #4c024c;
 }
 .info:hover {
   filter: brightness(0.8);
