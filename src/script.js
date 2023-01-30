@@ -92,22 +92,21 @@ function describeWeather(response) {
   }
 }
 function showTemp(response) {
-  console.log(response);
-  let currentDegree = Math.round(response.data.main.temp);
+  let currentDegree = Math.round(response.data.temperature.current);
   document.querySelector("#current-degree").innerHTML = currentDegree;
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].description;
-  let cityLatitude = response.data.coord.lat;
-  let cityLongitude = response.data.coord.lon;
+    response.data.condition.description;
+  let cityLatitude = response.data.coordinates.latitude;
+  let cityLongitude = response.data.coordinates.longitude;
   let apiKey = `f5029b784306910c19746e40c14d6cd3`;
   let hourlyApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLatitude}&lon=${cityLongitude}&appid=${apiKey}`;
   axios.get(hourlyApi).then(describeWeather);
 }
 function searchCity(city) {
-  let apiKey = `f5029b784306910c19746e40c14d6cd3`;
+  let apiKey = `dc4bef1144abao07e0a04636bbfc1bdt`;
   let units = `metric`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemp);
 }
 function handleSubmit(event) {
