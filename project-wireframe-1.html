@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather forecast</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/project-styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Pacifico&family=Sofia+Sans:wght@200;300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/21fe37165f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <i
+        title="Current Location"
+        class="fa-solid fa-location-dot current-location-icon"
+      ></i>
+      <div class="pop-up-content">
+        <form id="search-form">
+          <div class="search-input">
+            <input
+              type="search"
+              id="search-input"
+              class="form-control search-bar"
+              placeholder="Enter a city name"
+            />
+            <button
+              id="search-btn"
+              type="submit"
+              class="btn btn-primary"
+              title="Other Locations"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+      <video
+        class="background"
+        autoplay
+        muted
+        loop
+        src="video/background.mp4"
+      ></video>
+      <section class="up-part">
+        <div class="today-weather-location">
+          <div class="today-weather-icon">
+            <img src="images/storm.png" style="float: left" alt="storm icon" />
+          </div>
+          <div class="details">
+            <h3 id="date-time"></h3>
+            <h1>
+              <span id="current-degree"></span
+              ><sup class="degree-symbol"
+                ><a href="" id="celcius">°C</a>|<a href="" id="fahrenheit"
+                  >°F</a
+                ></sup
+              >
+            </h1>
+            <h2 id="city"></h2>
+          </div>
+        </div>
+        <div class="general-info">
+          <div class="row info-grid">
+            <div class="col-sm-6 info">
+              <i class="fa-solid fa-sun uv-icon"></i>
+              <br />
+              <strong>UV index</strong>
+              <div id="uv-index"></div>
+            </div>
+            <div class="col-sm-6 info">
+              <i class="fa-solid fa-droplet humidity-icon"></i>
+              <br />
+              <strong>Humidity</strong>
+              <div id="humidity-percentage"></div>
+            </div>
+            <div class="col-sm-6 info">
+              <i class="fa-solid fa-cloud-rain preci-icon"></i>
+              <br />
+              <strong>Precipitation</strong>
+              <div id="precipitation-percentage"></div>
+            </div>
+            <div class="col-sm-6 info">
+              <i class="fa-solid fa-wind wind-icon"></i>
+              <br />
+              <strong>Wind</strong>
+              <div id="win-speed-kilometer-per-hour"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="days-of-week">
+        <div class="row">
+          <div class="col-sm">
+            <h4>TUE</h4>
+            <img src="images/storm.png" alt="storm icon" class="weather-icon" />
+            <div class="degree">29° 23°</div>
+          </div>
+          <div class="col-sm">
+            <h4>WED</h4>
+
+            <img src="images/storm.png" alt="storm icon" class="weather-icon" />
+
+            <div class="degree">31° 23°</div>
+          </div>
+          <div class="col-sm">
+            <h4>THUR</h4>
+            <img
+              src="images/cloudy.png"
+              alt="cloudy icon"
+              class="weather-icon"
+            />
+            <div class="degree">31° 23°</div>
+          </div>
+          <div class="col-sm">
+            <h4>FRI</h4>
+            <img
+              src="images/cloudy.png"
+              alt="cloudy icon"
+              class="weather-icon"
+            />
+            <div class="degree">32° 23°</div>
+          </div>
+          <div class="col-sm">
+            <h4>SAT</h4>
+            <img
+              src="images/cloudy.png"
+              alt="cloudy icon"
+              class="weather-icon"
+            />
+            <div class="degree">32° 24°</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>

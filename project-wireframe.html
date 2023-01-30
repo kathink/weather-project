@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather forecast</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/project-styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Pacifico&family=Sofia+Sans:wght@200;300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/21fe37165f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <i class="fa-solid fa-location-dot pop-up-icon"></i>
+      <div class="pop-up-content">
+        <div class="favourite-location">
+          <i class="fa-solid fa-star favourite-icon"></i> Favourite Location
+        </div>
+        <p class="city">
+          <i class="fa-solid fa-map-pin city-icon"></i>
+          <span id="favourite-city">Ho Chi Minh City, Vietnam</span>
+        </p>
+        <hr />
+        <form id="search-form">
+          <div class="search-input">
+            <input
+              type="search"
+              id="search-input"
+              class="form-control search-bar"
+              placeholder="Search"
+            />
+            <button type="submit" class="btn btn-primary">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <label for="search-bar"> Enter a city name </label>
+        </form>
+      </div>
+      <video
+        class="background"
+        autoplay
+        muted
+        loop
+        src="video/background.mp4"
+      ></video>
+      <section class="up-part">
+        <div class="today-weather-location">
+          <div class="today-weather-icon">
+            <img src="images/storm.png" style="float: left" alt="storm icon" />
+          </div>
+          <div class="details">
+            <h3 id="date-time"></h3>
+            <h1>
+              <span id="current-degree">33</span
+              ><sup class="degree-symbol"
+                ><a href="" id="celcius">°C</a>|<a href="" id="fahrenheit"
+                  >°F</a
+                ></sup
+              >
+            </h1>
+            <h2 id="city">Ho Chi Minh City</h2>
+          </div>
+        </div>
+        <div class="general-info">
+          <div class="row info-grid">
+            <div class="col-sm-6 info">
+              <i class="fa-solid fa-sun uv-icon"></i>
+              <br />
+              <strong>UV index</strong>
+              <br />Low
+            </div>
+            <div class="col-sm-6 info">
+              <i class="fa-solid fa-droplet humidity-icon"></i>
+              <br />
+              <strong>Humidity</strong>
+              <br />70%
+            </div>
+            <div class="col-sm-6 info">
+              <i class="fa-solid fa-cloud-rain preci-icon"></i>
+              <br />
+              <strong>Precipitation</strong>
+              <br />90%
+            </div>
+            <div class="col-sm-6 info">
+              <i class="fa-solid fa-wind wind-icon"></i>
+              <br />
+              <strong>Wind</strong>
+              <br />16km/h
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="days-of-week">
+        <div class="row">
+          <div class="col-sm">
+            <h4>TUE</h4>
+            <img src="images/storm.png" alt="storm icon" class="weather-icon" />
+            <div class="degree">29° 23°</div>
+          </div>
+          <div class="col-sm">
+            <h4>WED</h4>
+
+            <img src="images/storm.png" alt="storm icon" class="weather-icon" />
+
+            <div class="degree">31° 23°</div>
+          </div>
+          <div class="col-sm">
+            <h4>THUR</h4>
+            <img
+              src="images/cloudy.png"
+              alt="cloudy icon"
+              class="weather-icon"
+            />
+            <div class="degree">31° 23°</div>
+          </div>
+          <div class="col-sm">
+            <h4>FRI</h4>
+            <img
+              src="images/cloudy.png"
+              alt="cloudy icon"
+              class="weather-icon"
+            />
+            <div class="degree">32° 23°</div>
+          </div>
+          <div class="col-sm">
+            <h4>SAT</h4>
+            <img
+              src="images/cloudy.png"
+              alt="cloudy icon"
+              class="weather-icon"
+            />
+            <div class="degree">32° 24°</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
