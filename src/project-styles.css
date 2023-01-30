@@ -12,6 +12,7 @@ h1 {
 h2 {
   font-size: 30px;
   color: rgba(0, 26, 50, 0.7);
+  padding-bottom: 10px;
 }
 
 h4 {
@@ -72,10 +73,11 @@ label {
   border-radius: 30px 10px;
 }
 .date-description {
-  font-size: 20px;
+  font-size: 18px;
   color: rgba(1, 37, 71, 0.7);
   font-family: "Pacifico";
-  padding-bottom: 10px;
+  position: relative;
+  left: -10px;
 }
 
 .current-location-icon {

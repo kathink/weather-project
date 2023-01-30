@@ -92,10 +92,12 @@ function describeWeather(response) {
   }
 }
 function showTemp(response) {
+  console.log(response);
   let currentDegree = Math.round(response.data.main.temp);
   document.querySelector("#current-degree").innerHTML = currentDegree;
-  let city = document.querySelector("#city");
-  city.innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#weather-description").innerHTML =
+    response.data.weather[0].description;
   let cityLatitude = response.data.coord.lat;
   let cityLongitude = response.data.coord.lon;
   let apiKey = `f5029b784306910c19746e40c14d6cd3`;
