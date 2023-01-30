@@ -42,6 +42,7 @@ button {
 a {
   color: rgb(9, 46, 82);
   transition: all 300ms ease-in-out;
+  font-weight: bold;
 }
 a:hover {
   text-decoration: none;
@@ -204,5 +205,12 @@ label {
   background: transparent;
 }
 .dev {
-  padding: 20px 0 15px 25px;
+  padding: 40px 0 15px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(39, 33, 66, 0.4);
+}
+.dev-name {
+  color: rgb(9, 46, 82);
+  font-weight: bold;
 }
