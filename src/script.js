@@ -8,6 +8,7 @@ function displayCurrentLocation() {
   function showTemp(response) {
     let currentLocation = response.data.name;
     let currentDegree = Math.round(response.data.main.temp);
+    currentCelcius = response.data.main.temp;
     document.querySelector("#current-degree").innerHTML = currentDegree;
     document.querySelector("#city").innerHTML = currentLocation;
   }
@@ -94,6 +95,7 @@ function describeWeather(response) {
 function showTemp(response) {
   let currentDegree = Math.round(response.data.main.temp);
   let currentIcon = document.querySelector("#current-weather-icon");
+  currentCelcius = response.data.main.temp;
   document.querySelector("#current-degree").innerHTML = currentDegree;
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#weather-description").innerHTML =
@@ -139,4 +141,23 @@ function formatDate(date) {
 }
 let currentDate = new Date();
 document.querySelector("#date-time").innerHTML = formatDate(currentDate);
+function convertFahrenheit(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.add("active");
+  celciusLink.classList.remove("active");
+  currentFahrenheit = Math.round((9.0 / 5.0) * currentCelcius + 32);
+  document.querySelector("#current-degree").innerHTML = currentFahrenheit;
+}
+function convertCelcius(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
+  document.querySelector("#current-degree").innerHTML =
+    Math.round(currentCelcius);
+}
+let currentCelcius = null;
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", convertFahrenheit);
+let celciusLink = document.querySelector("#celcius");
+celciusLink.addEventListener("click", convertCelcius);
 searchCity("London");

@@ -10,9 +10,10 @@ h1 {
   color: rgb(9, 46, 82);
 }
 h2 {
-  font-size: 30px;
+  font-size: 28px;
   color: rgba(0, 26, 50, 0.7);
   padding-bottom: 10px;
+  font-family: "Merienda";
 }
 
 h4 {
@@ -36,20 +37,15 @@ button {
     rgba(172, 224, 249, 0.2) 100%
   );
 }
-a {
+.dev-ops {
   color: rgb(9, 46, 82);
   transition: all 300ms ease-in-out;
   font-weight: bold;
 }
-a:hover {
+.dev-ops:hover {
   text-decoration: none;
 }
-label {
-  font-family: "Sofia Sans";
-  font-weight: 300;
-  font-size: 20px;
-  margin: 80px 0 60px 45px;
-}
+
 .background {
   width: 100vw;
   height: 100vh;
@@ -129,7 +125,14 @@ label {
   position: relative;
   top: -30px;
 }
-
+.active {
+  color: rgb(9, 46, 82);
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+  color: rgb(9, 46, 82);
+}
 .general-info {
   max-width: 170px;
   position: absolute;
