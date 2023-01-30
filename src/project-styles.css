@@ -66,6 +66,7 @@ button {
   font-family: "Pacifico";
   position: relative;
   left: -10px;
+  top: 5px;
 }
 
 .current-location-icon {
