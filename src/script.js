@@ -74,6 +74,22 @@ function showTemp(response) {
   let hourlyApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLatitude}&lon=${cityLongitude}&appid=${apiKey}`;
   axios.get(hourlyApi).then(describeWeather);
 }
+function displayForecast() {
+  let forecastElement = document.getElementById("forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["WED", "THUR", "FRI", "SAT", "SUN"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-sm">
+      <h4>${day}</h4>
+      <img src="#" alt="storm icon" class="weather-icon" />
+      <div class="degree"> <strong>29°</strong> 23°</div>
+    </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function searchCity(city) {
   let apiKey = `6782253072f7d90462731a624097fc54`;
   let units = `metric`;
@@ -124,3 +140,4 @@ fahrenheitLink.addEventListener("click", convertFahrenheit);
 let celciusLink = document.querySelector("#celcius");
 celciusLink.addEventListener("click", convertCelcius);
 searchCity("London");
+displayForecast();
