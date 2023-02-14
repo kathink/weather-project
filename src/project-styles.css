@@ -118,14 +118,6 @@ button {
   position: relative;
   top: -30px;
 }
-.active {
-  color: rgb(9, 46, 82);
-  cursor: default;
-}
-.active:hover {
-  text-decoration: none;
-  color: rgb(9, 46, 82);
-}
 .general-info {
   max-width: 170px;
   position: absolute;

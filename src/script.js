@@ -132,23 +132,4 @@ function formatDate(date) {
 }
 let currentDate = new Date();
 document.querySelector("#date-time").innerHTML = formatDate(currentDate);
-function convertFahrenheit(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.add("active");
-  celciusLink.classList.remove("active");
-  currentFahrenheit = Math.round((9.0 / 5.0) * currentCelcius + 32);
-  document.querySelector("#current-degree").innerHTML = currentFahrenheit;
-}
-function convertCelcius(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.remove("active");
-  celciusLink.classList.add("active");
-  document.querySelector("#current-degree").innerHTML =
-    Math.round(currentCelcius);
-}
-let currentCelcius = null;
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", convertFahrenheit);
-let celciusLink = document.querySelector("#celcius");
-celciusLink.addEventListener("click", convertCelcius);
 searchCity("London");
