@@ -2,7 +2,9 @@ function showSearchBar() {
   document.querySelector(".search-bar").style.transition = "all 3s linear";
   document.querySelector(".search-bar").style.width = "480px";
 }
-document.getElementById("search-btn").addEventListener("click", showSearchBar);
+document
+  .getElementById("search-btn")
+  .addEventListener("mouseover", showSearchBar);
 
 function displayCurrentLocation() {
   function retrievePosition(position) {
