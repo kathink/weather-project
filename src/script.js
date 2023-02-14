@@ -55,6 +55,33 @@ function describeWeather(response) {
     uvIndex.innerHTML = "Extreme";
   }
 }
+function formatDateForecast(timestamp) {
+  let day = new Date(timestamp * 1000).getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  return days[day];
+}
+function displayForecast(response) {
+  let forecastElement = document.getElementById("forecast");
+  let forecastHTML = `<div class="row">`;
+  let forecast = response.data.daily;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-sm">
+      <h4>${formatDateForecast(forecastDay.dt)}</h4>
+      <img src="images/${
+        forecastDay.weather[0].icon
+      }.png" alt="storm icon" class="weather-icon" />
+      <div class="degree"> <strong>${Math.round(
+        forecastDay.temp.max
+      )}°</strong> ${Math.round(forecastDay.temp.min)}°</div>
+    </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function showTemp(response) {
   let currentDegree = Math.round(response.data.main.temp);
   let currentIcon = document.querySelector("#current-weather-icon");
@@ -71,24 +98,9 @@ function showTemp(response) {
   let cityLatitude = response.data.coord.lat;
   let cityLongitude = response.data.coord.lon;
   let apiKey = `6782253072f7d90462731a624097fc54`;
-  let hourlyApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLatitude}&lon=${cityLongitude}&appid=${apiKey}`;
-  axios.get(hourlyApi).then(describeWeather);
-}
-function displayForecast() {
-  let forecastElement = document.getElementById("forecast");
-  let forecastHTML = `<div class="row">`;
-  let days = ["WED", "THUR", "FRI", "SAT", "SUN"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-sm">
-      <h4>${day}</h4>
-      <img src="#" alt="storm icon" class="weather-icon" />
-      <div class="degree"> <strong>29°</strong> 23°</div>
-    </div>`;
-  });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+  let oneCallApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLatitude}&lon=${cityLongitude}&appid=${apiKey}&units=metric`;
+  axios.get(oneCallApi).then(describeWeather);
+  axios.get(oneCallApi).then(displayForecast);
 }
 function searchCity(city) {
   let apiKey = `6782253072f7d90462731a624097fc54`;
@@ -140,4 +152,3 @@ fahrenheitLink.addEventListener("click", convertFahrenheit);
 let celciusLink = document.querySelector("#celcius");
 celciusLink.addEventListener("click", convertCelcius);
 searchCity("London");
-displayForecast();
